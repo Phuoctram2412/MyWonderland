@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WonderLand</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fa-brands fa-phoenix-framework"></i>
+            <h1>WonderLand</h1>
+        </div>
+        <div class="form-container">
+            <div class="introduction">
+                <h3>WonderLand Resort & Hotel</h3>
+                <p>Welcome to WonderLand Hotel's and Resort. 
+                    Please fill in the below information, alternatively a
+                     manual sign-in sheet can be provided to you.</p>
+            </div>
+            <form>
+                <h2>Name</h2>
+                <input type="text" placeholder="First Name" class="input-fname" required> <input type="text" placeholder="Last Name" class="input-lname" required>
+                <h2>Email</h2>
+                <input type="email" placeholder="Enter your email" class="input-text" required>
+                <h2>Phone Number</h2>
+                <input type="number" class="input-text" required>
+                <h2>Check in date</h2>
+                <input type="date" class="input-text" required>
+                <h2>Check out date</h2>
+                <input type="date" class="input-text" required>
+                
+            </form>
+            <button class="submit-btn">Submit</button>
+            <p>Thank you for choose WonderLand and we hope you will have a great trip with your family and friends.</p>
+        </div>
+            
+            
+        
+    </div>
+    <script>
+        const submitBtn = document.querySelector('.submit-btn')
+        const submitValue = document.querySelector('.input-fname')
+        const submitLname = document.querySelector('.input-lname')
+
+        submitBtn.addEventListener('click', function(){
+            alert(`Thank you: ${submitValue.value} ${submitLname.value} for choosing WonderLand. Please check your email for comfimation number`)
+        })
+    </script>
+</body>
+</html>

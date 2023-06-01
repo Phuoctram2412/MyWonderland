@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WonderLand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+        .container{
+            background-image: url('https://i0.wp.com/outoftownblog.com/wp-content/uploads/2019/08/Bach-Ma-National-Park-photo-via-Klook.jpg?fit=1200%2C675&ssl=1');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-box{
+            width: 90%;
+            max-width: 450px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            padding: 50px 60px 70px;
+            text-align: center;
+            border: 1px solid lightslategray;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .form-box h1{
+            font-size: 30px;
+            margin-bottom: 60px;
+            color: black;
+            position: relative;
+        }
+        .form-box h1::after{
+            content: '';
+            width: 30px;
+            height: 4px;
+            border-radius: 3px;
+            background-color: #DAA520;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .input-field{
+            background-color: #eaeaea;
+            margin: 15px 0;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            max-height: 65px;
+            transition: max-height 0.5s;
+            /* this will make the text to disappear */
+            overflow: hidden;
+        }
+        input{
+            width: 100%;
+            background-color: transparent;
+            border: 0;
+            outline: 0;
+            padding: 18px 15px;
+            
+        }
+        .input-field i{
+            margin-left: 15px;
+            color: #999;
+        }
+        form p{
+            text-align: left;
+            color: white;
+        }
+        form p a{
+            text-decoration: none;
+            color: #DAA520;
+        }
+        .btn-field{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-field button{
+            flex-basis: 48%;
+            background-color: #DAA520;
+            color: white;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            outline: 0;
+            cursor: pointer;
+            transition: background-color 1s;
+        }
+        .input-group{
+            height: 280px;
+        }
+        .btn-field button.disable{
+            background-color: #eaeaea;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-box">
+            <h1 id="title">Sign up </h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="password" placeholder="Enter your password" required>
+                    </div>
+                    <div class="input-field"  id="nameField">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="password" placeholder="Enter your password again" required>
+                    </div>
+                    <p>Forget your password?<a href="#" style="margin-left: 20px ">Click here</a></p>
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signup-btn">Sign up</button>
+                    <button type="button" id="signin-btn" class="disable">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        const signupButton = document.getElementById('signup-btn');
+        const signinButton = document.getElementById('signin-btn');
+        const nameField = document.getElementById('nameField');
+        const title = document.getElementById('title');
+
+        signinButton.addEventListener('click', function(){
+            nameField.style.maxHeight = '0'
+            title.innerHTML = "Sign In"
+            signupButton.classList.add('disable')
+            signinButton.classList.remove('disable')
+        })
+
+        signupButton.addEventListener('click', function(){
+            nameField.style.maxHeight = '60px'
+            title.innerHTML = "Sign Up"
+            signupButton.classList.remove('disable')
+            signinButton.classList.add('disable')
+        })
+
+
+    </script>
+
+</body>
+</html>
